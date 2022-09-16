@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>teslapro</finalName>
+		<finalName>Visa-webapps</finalName>
 		
 		<plugins>
 			<plugin>
