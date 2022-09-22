@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Hyper-Ekpen Technologies.</h1>
-<h1 align="center">We develop and support high quality Software Solutions to millions of clients.
+<h1 align="center">We develop, support and maitain high quality Software Solutions to millions of clients.
 	           We are raising over 1m millionaires by 2030.
 	We offer end-to-end Training in DevOps with Linux and Cloud equipping IT Engineers for unbeatable performance and credibility.</h1>
 <hr>
