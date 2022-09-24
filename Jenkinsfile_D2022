@@ -49,7 +49,5 @@ Thanks for your effort.''', recipientProviders: [contributor(), buildUser(), dev
     */
     
     }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
+
 
