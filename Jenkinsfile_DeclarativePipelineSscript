@@ -17,6 +17,8 @@ pipeline{
         sh "mvn clean package"
       }
     }
+    
+    /*
     stage('4CodeQuality'){
       steps{
         sh "echo 'Perfoming CodeQualityAnalysis' "
@@ -36,9 +38,13 @@ pipeline{
 }
 post{
     always{
-      emailext body: '''Hey guys
 emailext body: '''Hello all,
 
 The build is successful.
 Thanks for your effort.''', recipientProviders: [contributor(), buildUser(), developers()], subject: 'Successful build', to: 'ekpenidehen@gmail.com'
     }
+
+}
+*/
+
+}
