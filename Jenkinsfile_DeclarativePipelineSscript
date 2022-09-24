@@ -23,7 +23,7 @@ pipeline{
         sh "mvn sonar:sonar"
       }
     } 
-    stage('5uploadNexus'){
+    stage('5uploadArtifacts'){
       steps{
         sh "mvn deploy"
       }
@@ -36,9 +36,13 @@ pipeline{
 }
 post{
     always{
-      emailext body: '''Hey guys
 emailext body: '''Hello all,
 
 The build is successful.
 Thanks for your effort.''', recipientProviders: [contributor(), buildUser(), developers()], subject: 'Successful build', to: 'ekpenidehen@gmail.com'
     }
+    }
+    
+    } 
+    
+
