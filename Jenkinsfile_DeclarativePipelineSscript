@@ -17,6 +17,7 @@ pipeline{
         sh "mvn clean package"
       }
     }
+    /*
     stage('4CodeQuality'){
       steps{
         sh "echo 'Perfoming CodeQualityAnalysis' "
@@ -42,6 +43,7 @@ The build is successful.
 Thanks for your effort.''', recipientProviders: [contributor(), buildUser(), developers()], subject: 'Successful build', to: 'ekpenidehen@gmail.com'
     }
     }
+    */
     
     } 
     
