@@ -1,0 +1,52 @@
+pipeline{
+  agent any 
+  tools {
+    maven "maven3.8.6"
+  }  
+  stages {
+    stage('1GetCode'){
+      steps{
+        sh "echo 'cloning the latest application version' "
+       git branch: 'feature', credentialsId: 'gitHubCredentials', url: 'https://github.com/Ekpen24/maven-web-application'
+      }
+    }
+    stage('3Test+Build'){
+      steps{
+        sh "echo 'running JUnit-test-cases' "
+        sh "echo 'testing must pass to create artifacts ' "
+        sh "mvn clean package"
+      }
+    }
+    stage('4CodeQuality'){
+      steps{
+        sh "echo 'Perfoming CodeQualityAnalysis' "
+        sh "mvn sonar:sonar"
+      }
+    } 
+    stage('5uploadNexus'){
+      steps{
+        sh "mvn deploy"
+      }
+    }  
+    stage('6deploy2prod'){
+      steps{
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://3.82.112.247:8080/')], contextPath: null, war: 'target/*war'   }
+    }     
+  }
+}
+post{
+    always{
+emailext body: '''Hello all,
+
+The build is successful.
+Thanks for your effort.''', recipientProviders: [contributor(), buildUser(), developers()], subject: 'Successful build', to: 'ekpenidehen@gmail.com'
+    }
+    }
+    
+    }
+    
+    }
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+
