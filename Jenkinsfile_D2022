@@ -22,7 +22,9 @@ pipeline{
         sh "echo 'Perfoming CodeQualityAnalysis' "
         sh "mvn sonar:sonar"
       }
-    } 
+    }
+    
+    /*
     stage('5uploadNexus'){
       steps{
         sh "mvn deploy"
@@ -44,6 +46,7 @@ Thanks for your effort.''', recipientProviders: [contributor(), buildUser(), dev
     }
     
     }
+    */
     
     }
 Footer
